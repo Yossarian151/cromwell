@@ -9,6 +9,7 @@ import cromwell.database.sql.joins.CallCachingJoin
 import cromwell.database.sql.tables._
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.language.postfixOps
 
 trait CallCachingSlickDatabase extends CallCachingSqlDatabase {
   this: EngineSlickDatabase =>

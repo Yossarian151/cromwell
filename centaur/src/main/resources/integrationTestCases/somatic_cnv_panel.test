@@ -1,6 +1,6 @@
 name: cnv_somatic_panel
 testFormat: workflowsuccess
-
+ignore: true
 files {
   wdl: Somatic/CNV-Panel/cnv_somatic_panel_workflow.wdl
   inputs: Somatic/CNV-Panel/cnv_somatic_panel_workflow_do_gc_wes.inputs
