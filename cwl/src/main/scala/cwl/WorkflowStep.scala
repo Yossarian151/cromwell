@@ -11,6 +11,7 @@ import cats.syntax.validated._
 import common.Checked
 import common.validation.Checked._
 import common.validation.ErrorOr.ErrorOr
+import cwl.CwlType.CwlType
 import cwl.ScatterMethod._
 import cwl.WorkflowStep.{WorkflowStepInputFold, _}
 import shapeless._
@@ -60,6 +61,8 @@ case class WorkflowStep(
     val requirementHints = hints.toList.flatten.flatMap { _.select[Requirement] }
     requirementHints ++ parentWorkflow.allHints
   }
+
+  def typedRunInputs: Map[String, Option[MyriadInputType]] = run.fold(RunToInputTypeMap)
 
   def typedOutputs: WomTypeMap = run.fold(RunOutputsToTypeMap)
 
