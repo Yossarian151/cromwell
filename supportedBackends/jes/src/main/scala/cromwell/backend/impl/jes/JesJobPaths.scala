@@ -31,6 +31,7 @@ final case class JesJobPaths(override val workflowPaths: JesWorkflowPaths, jobKe
 
   val jesMonitoringScriptFilename: String = s"${JesJobPaths.JesMonitoringKey}.sh"
 
+  // This comment appears to be vestigial.
   /*
   TODO: Move various monitoring files path generation here.
 
